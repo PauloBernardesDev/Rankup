@@ -1,0 +1,44 @@
+name: RankUp
+version: 1.0.0
+main: dev.paulobernardes.rankup.RankUp
+api-version: '1.21'
+authors:
+  - PauloBernardesDev
+description: Sistema de RankUp configurável para servidores Minecraft
+
+depend:
+  - LuckPerms
+  - Vault
+
+softdepend:
+  - PlaceholderAPI
+
+commands:
+
+  rankup:
+    description: Abre o menu de RankUp
+    usage: /rankup
+    aliases:
+      - ranks
+      - ranksup
+
+  horas:
+    description: Mostra as horas de jogo de um jogador
+    usage: /horas <jogador>
+    permission: rankup.admin
+
+  addhoras:
+    description: Adiciona horas bônus a um jogador
+    usage: /addhoras <jogador> <horas>
+    permission: rankup.admin
+
+  removehoras:
+    description: Remove horas bônus de um jogador
+    usage: /removehoras <jogador> <horas>
+    permission: rankup.admin
+
+permissions:
+
+  rankup.admin:
+    description: Permissão administrativa do RankUp
+    default: op

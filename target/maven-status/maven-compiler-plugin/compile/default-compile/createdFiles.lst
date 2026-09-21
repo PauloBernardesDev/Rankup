@@ -1,0 +1,17 @@
+dev\paulobernardes\rankup\gui\RankUpMenu.class
+dev\paulobernardes\rankup\RankUp.class
+dev\paulobernardes\rankup\util\TempoUtil.class
+dev\paulobernardes\rankup\comandos\RankUpComando.class
+dev\paulobernardes\rankup\gerenciadores\RankManager.class
+dev\paulobernardes\rankup\modelos\JogadorRankUp.class
+dev\paulobernardes\rankup\gerenciadores\MensagemManager.class
+dev\paulobernardes\rankup\gerenciadores\RecompensaManager.class
+dev\paulobernardes\rankup\gerenciadores\PromocaoManager.class
+dev\paulobernardes\rankup\gerenciadores\JogadorManager.class
+dev\paulobernardes\rankup\gerenciadores\PlaceholderManager.class
+dev\paulobernardes\rankup\modelos\Rank.class
+dev\paulobernardes\rankup\banco\BancoDados.class
+dev\paulobernardes\rankup\comandos\HorasComando.class
+dev\paulobernardes\rankup\gerenciadores\PermissaoManager.class
+dev\paulobernardes\rankup\gerenciadores\HorasManager.class
+dev\paulobernardes\rankup\eventos\RankUpMenuListener.class

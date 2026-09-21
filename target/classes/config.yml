@@ -1,0 +1,317 @@
+# ==================================================
+# RankUp
+# ==================================================
+
+configuracao:
+
+  prefixo: "&8[&6RankUp&8] "
+
+  mensagens:
+
+    rankup:
+      sucesso: "%prefixo%&aVocê alcançou o rank &f%rank%&a!"
+      anuncio-global: "%prefixo%&f%jogador% &aalcançou o rank &f%rank%&a!"
+      sem-dinheiro: "%prefixo%&cVocê não possui dinheiro suficiente."
+      sem-tempo: "%prefixo%&cVocê ainda não possui tempo de jogo suficiente."
+      sem-dinheiro-e-tempo: "%prefixo%&cVocê precisa de mais &f%dinheiro% &ce &f%horas% &cde horas."
+      rank-maximo: "%prefixo%&eVocê já alcançou o rank máximo."
+      rank-bloqueado: "%prefixo%&cVocê precisa conquistar os ranks anteriores primeiro."
+
+    comandos:
+      jogador-apenas: "%prefixo%&cEste comando só pode ser usado por jogadores."
+      sem-permissao: "%prefixo%&cVocê não possui permissão para isso."
+      uso-rankup: "%prefixo%&eUso: /rankup"
+      uso-rankup-set: "%prefixo%&eUso: /rankup set <jogador> <rank>"
+      reload: "%prefixo%&aConfiguração do RankUp recarregada com sucesso."
+      sem-permissao-reload: "%prefixo%&cApenas operadores podem utilizar este comando."
+
+    administrativo:
+      rank-numero: "%prefixo%&cO rank precisa ser um número."
+      rank-inexistente: "%prefixo%&cO rank &f%rank% &cnão existe."
+      jogador-nao-encontrado: "%prefixo%&cO jogador &f%jogador% &cnão foi encontrado."
+      rank-definido: "%prefixo%&aO rank de &f%jogador% &afoi definido para &f%rank%&a."
+
+    horas:
+      jogador-nao-encontrado: "%prefixo%&cO jogador &f%jogador% &cnão foi encontrado."
+      valor-invalido: "%prefixo%&cA quantidade de horas precisa ser um número."
+      quantidade-invalida: "%prefixo%&cA quantidade de horas precisa ser maior que zero."
+      uso-horas: "%prefixo%&eUso: /horas <jogador>"
+      uso-addhoras: "%prefixo%&eUso: /addhoras <jogador> <horas>"
+      uso-removehoras: "%prefixo%&eUso: /removehoras <jogador> <horas>"
+      consulta: "%prefixo%&7Horas de &f%jogador%&7: &b%horas%"
+      adicionadas: "%prefixo%&aForam adicionadas &f%horas% &ade horas para &f%jogador%&a."
+      removidas: "%prefixo%&aForam removidas &f%horas% &ade horas de &f%jogador%&a."
+
+  tempo:
+
+    unidade-padrao: "horas"
+
+# ==================================================
+# GUI
+# ==================================================
+
+gui:
+
+  titulo: "&5&lSistema de RankUp"
+  tamanho: 54
+
+  textos:
+
+    perfil:
+
+      nome: "&f&l%jogador%"
+
+      lore:
+        - "&8&m--------------------"
+        - "&d★ &7Rank atual: &f%rank%"
+        - ""
+        - "&6&l$ &7Dinheiro"
+        - "   &e$%dinheiro%"
+        - ""
+        - "&b&l⌛ &7Horas jogadas"
+        - "   &f%horas%"
+        - ""
+        - "&8&m--------------------"
+
+    ranks:
+
+      conquistado:
+
+        nome: "&a✔ %rank%"
+        status: "&a✔ Rank conquistado"
+
+      atual:
+
+        status: "&e★ RANK ATUAL"
+
+      proximo:
+
+        nome: "&e★ %rank%"
+
+        requisitos-atendidos: "&a✔ Requisitos atendidos!"
+        clique: "&eClique para subir de rank."
+
+        requisitos-nao-atendidos: "&c✘ Requisitos não atendidos"
+
+        dinheiro-faltante: "&7Dinheiro restante: &c%dinheiro%"
+        horas-faltantes: "&7Horas restantes: &c%horas%"
+
+      bloqueado:
+
+        nome: "&c✘ %rank%"
+        status: "&c✘ Rank bloqueado"
+        anteriores: "&7Conquiste os ranks anteriores."
+
+    informacao:
+
+      nome: "&6&lComo funciona?"
+
+      lore:
+        - "&7Suba de rank para liberar"
+        - "&7novos comandos e benefícios."
+        - ""
+        - "&a✔ &fVerde = rank conquistado"
+        - "&e★ &fAmarelo = próximo rank"
+        - "&c✘ &fVermelho = rank bloqueado"
+        - ""
+        - "&7Clique no próximo rank"
+        - "&7quando possuir os requisitos."
+
+# ==================================================
+# Ranks
+# ==================================================
+
+ranks:
+
+  rank1:
+    nivel: 1
+    nome: "&7[01/10]"
+    dinheiro: 0
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Este é o seu ponto de partida."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank2:
+    nivel: 2
+    nome: "&f[02/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes:
+      - simplesglobalchat.global
+      - essentials.signs.color
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&a✓ &fAcesso ao Chat Global"
+      - "&a✓ &fCores nas placas"
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank3:
+    nivel: 3
+    nome: "&a[03/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes:
+      - essentials.sethome.multiple
+      - essentials.sethome.multiple.rank3
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&a✓ &fAté 2 homes"
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank4:
+    nivel: 4
+    nome: "&b[04/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank5:
+    nivel: 5
+    nome: "&e[05/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank6:
+    nivel: 6
+    nome: "&6[06/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank7:
+    nivel: 7
+    nome: "&d[07/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank8:
+    nivel: 8
+    nome: "&5[08/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank9:
+    nivel: 9
+    nome: "&c[09/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
+
+  rank10:
+    nivel: 10
+    nome: "&6[10/10]"
+    dinheiro: 10000
+    horas: 0
+
+    permissoes: []
+
+    comandos: []
+
+    lore:
+      - "&7Ao alcançar este rank:"
+      - ""
+      - "&7Novos benefícios serão definidos futuramente."
+      - ""
+      - "&6Requisitos:"
+      - "&7Dinheiro: &f$%dinheiro%"
+      - "&7Horas: &f%horas%"
